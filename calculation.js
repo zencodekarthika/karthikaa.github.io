@@ -5,7 +5,7 @@ function Car(name) {
     this.direction = null;
     this.currentGearPosition = 0;
     this.kilometersRunned = 0;
-    this.mileage = 0;
+    this.mileage = 5;
     this.turnToDirection = function (direction) {
         this.direction = direction;
     }
@@ -26,17 +26,17 @@ function Car(name) {
             }
 
             case 2: {
-                this.kilometersRunned = this.kilometersRunned + 500;
+                this.kilometersRunned = this.kilometersRunned + 200;
                 break;
             }
 
             case 3: {
-                this.kilometersRunned = this.kilometersRunned + 800;
+                this.kilometersRunned = this.kilometersRunned + 300;
                 break;
             }
 
             case 4: {
-                this.kilometersRunned = this.kilometersRunned + 900;
+                this.kilometersRunned = this.kilometersRunned + 400;
                 break;
             }
         }
@@ -55,6 +55,13 @@ function Car(name) {
         console.log(this.name + ' fuel capacity is ' + this.fuelCapacity);
         console.log(this.name + ' total kilometers runned ' + this.kilometersRunned);
     }
+    this.remainingfuelcapacity = function () {
+        var mileage = 20;
+        var res = this.kilometersRunned / mileage;
+        var finalresult = this.fuelCapacity - res;
+        console.log(this.name + 'remaining fuel' + 'finalresult');
+        console.log(finalresult);
+    }
 }
 
 var myCar1 = new Car('sedan');
@@ -66,15 +73,8 @@ myCar1.fillFuel(20);
 myCar1.changeGear(1);
 myCar1.changeGear(2);
 myCar1.changeGear(3);
-myCar1.changeGear(4);
-myCar1.changeGear(4);
-myCar1.changeGear(4);
-myCar1.changeGear(4);
-myCar1.changeGear(3);
-myCar1.changeGear(2);
-myCar1.changeGear(1);
-myCar1.changeGear(0);
 myCar1.turnToDirection('right');
 myCar1.getDirection();
 myCar1.getFuelCapacity();
+myCar1.remainingfuelcapacity();
 console.log("*****BYE MY TASK IS COMPLETED*******");
